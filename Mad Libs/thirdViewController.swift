@@ -9,10 +9,12 @@
 import UIKit
 
 class thirdViewController: UIViewController {
-    @IBOutlet weak var showStory: UILabel!
+    @IBOutlet weak var showStory: UITextView!
+    
     
 
-    var finalStory = String()
+    var finalStory: String?
+   
 
     override func viewDidLoad() {
         //super.viewDidLoad()

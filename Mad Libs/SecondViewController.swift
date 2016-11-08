@@ -69,17 +69,17 @@ class SecondViewController: UIViewController {
             insertWord.text = nil
         
         if storyMaker.getPlaceholderRemainingCount() == 0 {
-          
-            print(rawText)
-                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                    rawText = storyMaker.toString()
-                    let destination: thirdViewController = segue.destination as! thirdViewController
-                    destination.finalStory = rawText
             
-            }
             performSegue(withIdentifier: "toThird", sender: nil)
         
     }
     
 }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        rawText = storyMaker.toString()
+        //print(rawText)
+        let destination = segue.destination as! thirdViewController
+        destination.finalStory = rawText
+        
+    }
 }

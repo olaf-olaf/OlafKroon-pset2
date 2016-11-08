@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     // segue contents to the rawtext variable in the the next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         text = loadText()
-        var destination: SecondViewController = segue.destination as! SecondViewController
+        let destination: SecondViewController = segue.destination as! SecondViewController
         destination.rawText = text
     }
 }
