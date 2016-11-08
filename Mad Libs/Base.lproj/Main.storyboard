@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BLS-Qg-uLG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,177 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="abe-eJ-j4c">
+                                <rect key="frame" x="16" y="65" width="343" height="602"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madlibs" translatesAutoresizingMaskIntoConstraints="NO" id="ZKE-sx-ANr">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="528.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY8-ml-0Fi">
+                                        <rect key="frame" x="0.0" y="528.5" width="343" height="73.5"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="25"/>
+                                        <state key="normal" title="Let's make a mad story!">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="btS-Yv-bgH" kind="show" id="sI9-bq-WoC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="abe-eJ-j4c" secondAttribute="bottom" id="8X4-RK-g6e"/>
+                            <constraint firstItem="abe-eJ-j4c" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CMa-Yj-icb"/>
+                            <constraint firstItem="abe-eJ-j4c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="65" id="M1x-8F-Zsr"/>
+                            <constraint firstItem="abe-eJ-j4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OEh-ty-M7s"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="emd-cl-LCR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="kq7-eO-dNk">
+            <objects>
+                <viewController id="btS-Yv-bgH" customClass="SecondViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gyi-GQ-cge"/>
+                        <viewControllerLayoutGuide type="bottom" id="BFJ-Ld-aag"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V1w-NA-Ol4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Lsm-U2-4yK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="303"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill in the words to complete the story!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oso-2L-7e6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-gq-frE">
+                                        <rect key="frame" x="0.0" y="21.5" width="375" height="229.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iOW-Lc-PZt">
+                                        <rect key="frame" x="0.0" y="251" width="375" height="30.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWk-fc-BCq">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-M6-nQR">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30.5"/>
+                                                <state key="normal" title="Enter">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="enterPressed:" destination="btS-Yv-bgH" eventType="touchUpInside" id="QST-FY-vbw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a varWordtype" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-YB-JFz">
+                                        <rect key="frame" x="0.0" y="281.5" width="375" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Lsm-U2-4yK" secondAttribute="trailing" id="XQT-1t-c03"/>
+                            <constraint firstItem="BFJ-Ld-aag" firstAttribute="top" secondItem="Lsm-U2-4yK" secondAttribute="bottom" constant="300" id="Yk5-r9-aQS"/>
+                            <constraint firstItem="Lsm-U2-4yK" firstAttribute="leading" secondItem="V1w-NA-Ol4" secondAttribute="leading" id="hsY-Kk-Rqz"/>
+                            <constraint firstItem="Lsm-U2-4yK" firstAttribute="top" secondItem="Gyi-GQ-cge" secondAttribute="bottom" id="mrd-9Q-ahr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enterWord" destination="EaU-M6-nQR" id="Cde-xj-64j"/>
+                        <outlet property="insertWord" destination="WWk-fc-BCq" id="abJ-br-W6k"/>
+                        <outlet property="promptWord" destination="J5a-YB-JFz" id="fuP-ac-tyj"/>
+                        <outlet property="wordsLeft" destination="rYG-gq-frE" id="4FO-QW-UTq"/>
+                        <segue destination="WNI-ve-OgM" kind="show" identifier="toThird" id="ucg-nK-Hnc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcK-mC-2xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="136.28185907046478"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="Zev-L9-6dq">
+            <objects>
+                <viewController id="WNI-ve-OgM" customClass="thirdViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HhB-aZ-FxF"/>
+                        <viewControllerLayoutGuide type="bottom" id="xYF-gf-e5K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dPm-aC-cIp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-i8-KQI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k6-Sp-vPh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" red="0.27690322810000001" green="1" blue="0.13213868740000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jrd-i8-KQI" firstAttribute="leading" secondItem="dPm-aC-cIp" secondAttribute="leading" id="MKy-jc-OTU"/>
+                            <constraint firstAttribute="trailing" secondItem="jrd-i8-KQI" secondAttribute="trailing" id="dRh-Zo-fG9"/>
+                            <constraint firstItem="jrd-i8-KQI" firstAttribute="top" secondItem="HhB-aZ-FxF" secondAttribute="bottom" id="qTN-VX-gRm"/>
+                            <constraint firstItem="xYF-gf-e5K" firstAttribute="top" secondItem="jrd-i8-KQI" secondAttribute="bottom" id="xDo-MI-gRv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showStory" destination="9k6-Sp-vPh" id="jK1-us-cKe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tT6-Wg-YtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2589.5999999999999" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9CM-du-bQQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BLS-Qg-uLG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5an-fC-0nj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QhI-8L-AUT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kf5-D3-uNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="madlibs" width="282" height="308"/>
+    </resources>
 </document>
