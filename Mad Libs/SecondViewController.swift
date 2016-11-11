@@ -10,25 +10,25 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    // outlets of the view
     @IBOutlet weak var wordsLeft: UILabel!
     @IBOutlet weak var enterWord: UIButton!
     @IBOutlet weak var insertWord: UITextField!
     @IBOutlet weak var promptWord: UILabel!
     
-
+    
     var rawText = String()
     
+    // create a Story object.
     var storyMaker = Story(stream: String())
     
-    // Create a story object.
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // initialize a Story object.
         storyMaker = Story(stream: rawText)
 
-        
-        // Display amount of placeholders left on the screen.
+        // Display amount of placeholders left.
         wordsLeft.text = String(storyMaker.getPlaceholderRemainingCount()) + " words left"
         
         // Display the type of word the user needs to enter.
@@ -40,7 +40,6 @@ class SecondViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     /*
@@ -53,7 +52,7 @@ class SecondViewController: UIViewController {
     }
     */
 
-    // If the button is clicked update rawText and display.
+    // If the button is clicked update rawText and the display.
     @IBAction func enterPressed(_ sender: Any) {
         
             // let storyMaker = Story(stream: rawText)
@@ -61,11 +60,13 @@ class SecondViewController: UIViewController {
         
             storyMaker.fillInPlaceholder(word: insertWord.text!)
         
-            //INSERT IF STATEMENT TO CHECK IF THERE ARE ANY WORDS LEFT. 
             
             wordsLeft.text = String(storyMaker.getPlaceholderRemainingCount()) + " words left"
+        
             promptWord.text = "please enter a " + storyMaker.getNextPlaceholder()
+        
             insertWord.placeholder = storyMaker.getNextPlaceholder()
+        
             insertWord.text = nil
         
         if storyMaker.getPlaceholderRemainingCount() == 0 {
@@ -77,7 +78,6 @@ class SecondViewController: UIViewController {
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         rawText = storyMaker.toString()
-        //print(rawText)
         let destination = segue.destination as! thirdViewController
         destination.finalStory = rawText
         

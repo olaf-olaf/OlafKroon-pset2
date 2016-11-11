@@ -12,43 +12,49 @@ class ViewController: UIViewController {
     
     // A variable to store the story in
     var text = String()
+    
+    // An array with al the possible madlib stories.
+    var madLibList: [String] = ["madlib0_simple", "madlib1_tarzan", "madlib2_university", "madlib3_clothes", "madlib4_dance"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //print(text)
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
-    // A function that loads a text file and stores it into a string
+    // A function that loads a text file and stores it into a string 'contents'.
     func loadText() -> String {
         var contents = String()
-        if let filepath = Bundle.main.path(forResource: "madlib1_tarzan", ofType: "txt")
+        if let filepath = Bundle.main.path(forResource: chooseStory(), ofType: "txt")
         {
             do {
                 contents = try String(contentsOfFile: filepath)
             } catch {
-                // contents could not be loaded
+                print("contents could not be loaded!")
             }
         } else {
-            // example.txt not found!
+            print("example.txt not found!")
         }
         return contents
     }
     
     
-    // segue contents to the rawtext variable in the the next view
+    // segue 'contents' string to the 'rawText' variable in the the next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         text = loadText()
         let destination: SecondViewController = segue.destination as! SecondViewController
         destination.rawText = text
+    }
+    
+    // a function that returns a random element from the 'madLibList' array.
+    func chooseStory() -> String {
+        let randomIndex = Int(arc4random_uniform(UInt32(madLibList.count)))
+        let result = self.madLibList[randomIndex]
+        return result
+        
     }
 }
 
