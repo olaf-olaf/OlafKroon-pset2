@@ -10,7 +10,7 @@ import UIKit
 
 class thirdViewController: UIViewController {
     @IBOutlet weak var showStory: UITextView!
-    
+
     
 
     var finalStory: String?

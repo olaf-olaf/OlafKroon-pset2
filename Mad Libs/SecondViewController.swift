@@ -14,6 +14,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var enterWord: UIButton!
     @IBOutlet weak var insertWord: UITextField!
     @IBOutlet weak var promptWord: UILabel!
+    @IBOutlet weak var cheer: UILabel!
+    
+    var cheerVariations: [String] = ["Go on!", "That's it!", "Impressive!", "Keep on going", "Right on", "This is going to be fun!", "Not bad", "The force is strong in you", "Classic, as always", "Good one!", "You're a pro", "Very well", "You enlighten me", "OMG don't stop", "You're on fire!", "Sheer genius!", "LIT", "HORSEFIGHTER", "Dayum", "Almost there!", "You must continue!", "Don't stop", "ROFL", "So so good", "You can't be stopped", "Well, thats possible", "I'm moved by this", "That's it, baby", "How creative", "BIEM", "Consider comedy, seriously"]
     
     
     var rawText = String()
@@ -55,9 +58,15 @@ class SecondViewController: UIViewController {
     // If the button is clicked update rawText and the display.
     @IBAction func enterPressed(_ sender: Any) {
         
-            // let storyMaker = Story(stream: rawText)
-       
         
+        
+        if (insertWord.text?.isEmpty)! {
+            let alert = UIAlertView()
+            alert.title = "Enter a word, silly"
+            alert.addButton(withTitle: "Ok")
+            alert.show()
+        }
+        else {
             storyMaker.fillInPlaceholder(word: insertWord.text!)
         
             
@@ -69,11 +78,16 @@ class SecondViewController: UIViewController {
         
             insertWord.text = nil
         
-        if storyMaker.getPlaceholderRemainingCount() == 0 {
-            
-            performSegue(withIdentifier: "toThird", sender: nil)
+            // Cheer to the user.
+            cheer.text = chooseCheer()
+            cheer.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         
-    }
+            if storyMaker.getPlaceholderRemainingCount() == 0 {
+            
+                performSegue(withIdentifier: "toThird", sender: nil)
+        
+            }
+        }
     
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,5 +95,13 @@ class SecondViewController: UIViewController {
         let destination = segue.destination as! thirdViewController
         destination.finalStory = rawText
         
+    }
+    
+    // a function that returns a random element from the 'madLibList' array.
+    func chooseCheer() -> String {
+        let randomIndex = Int(arc4random_uniform(UInt32(cheerVariations.count)))
+        let result = self.cheerVariations[randomIndex]
+        return result
+
     }
 }

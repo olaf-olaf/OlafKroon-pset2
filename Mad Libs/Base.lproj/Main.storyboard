@@ -67,32 +67,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Lsm-U2-4yK">
-                                <rect key="frame" x="0.0" y="20" width="375" height="347"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Lsm-U2-4yK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill in the words to complete the story!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oso-2L-7e6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word(s) left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-gq-frE">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="73.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="42"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iOW-Lc-PZt">
-                                        <rect key="frame" x="0.0" y="163.5" width="375" height="108"/>
+                                        <rect key="frame" x="0.0" y="191.5" width="375" height="59.5"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWk-fc-BCq">
-                                                <rect key="frame" x="0.0" y="39" width="167.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="15" width="167.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-M6-nQR">
-                                                <rect key="frame" x="207.5" y="39" width="167.5" height="30"/>
+                                                <rect key="frame" x="207.5" y="15" width="167.5" height="30"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Enter">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,9 +104,15 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a varWordtype" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-YB-JFz">
-                                        <rect key="frame" x="0.0" y="271.5" width="375" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="301" width="375" height="42"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXXXXXXXXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fo0-yx-tFN">
+                                        <rect key="frame" x="0.0" y="393" width="375" height="254"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="23"/>
+                                        <color key="textColor" red="0.99752103889999999" green="1" blue="0.96985985900000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -119,12 +125,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Lsm-U2-4yK" secondAttribute="trailing" id="XQT-1t-c03"/>
-                            <constraint firstItem="BFJ-Ld-aag" firstAttribute="top" secondItem="Lsm-U2-4yK" secondAttribute="bottom" constant="300" id="Yk5-r9-aQS"/>
+                            <constraint firstItem="BFJ-Ld-aag" firstAttribute="top" secondItem="Lsm-U2-4yK" secondAttribute="bottom" id="Yk5-r9-aQS"/>
                             <constraint firstItem="Lsm-U2-4yK" firstAttribute="leading" secondItem="V1w-NA-Ol4" secondAttribute="leading" id="hsY-Kk-Rqz"/>
                             <constraint firstItem="Lsm-U2-4yK" firstAttribute="top" secondItem="Gyi-GQ-cge" secondAttribute="bottom" id="mrd-9Q-ahr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cheer" destination="Fo0-yx-tFN" id="HrA-bI-P47"/>
                         <outlet property="enterWord" destination="EaU-M6-nQR" id="Cde-xj-64j"/>
                         <outlet property="insertWord" destination="WWk-fc-BCq" id="abJ-br-W6k"/>
                         <outlet property="promptWord" destination="J5a-YB-JFz" id="fuP-ac-tyj"/>
